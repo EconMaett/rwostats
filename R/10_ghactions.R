@@ -15,13 +15,21 @@ library(googlesheets4)
 # The data is publicly available so we do not need to authenticate
 gs4_deauth()
 
-
 survey_data <- read_sheet(ss = "https://docs.google.com/spreadsheets/d/13kfPtyQP1xmL4Rn6rfJHgJcAblfH7pxS5RvdmGe6BHg/edit?usp=sharing")
-head(survey_data)
-colnames(survey_data)
 
 survey_data |> 
   write_rds(file = "data/survey_data.rds")
+
+# Create a new folder called ".github"
+# dir.create(".github")
+
+# Inside that folder, create a new folder called "workflows"
+# dir.create(".github/workflows")
+
+# Create a new text file and save it as "import-data.yaml"
+# inside of the "workflows" folder.
+
+# Publish these files on GitHub.
 
 
 ## How GitHub Actions Work -----
@@ -32,38 +40,6 @@ survey_data |>
 # These YAML files contain a set of instructions that tell
 # a virtual computer what to do.
 
-# An example might look something like:
-# on:
-#   push:
-#     branches: main
-
-# jobs:
-#   import-data:
-#     runs-on: ubunto-latest
-#     steps:
-#       - name: Set up R
-#         uses: r-lib/actions/setup-r@v2
-
-#       - name: Install packages
-#         uses: r-lib/actions/setup-r-dependencies@v2
-#         with:
-#           packages: |
-#             any::tidyverse
-#             any::googlesheets4
-
-#       - name: Check out repository
-#         uses: actions/checkout@v3
-
-#       - name: Import data
-#         run: Rscript -e 'source("import-data.R")'
-
-#       - name: Commit results
-#         run: |
-#          git config --local user.email "actions@github.com"
-#          git config --local user.name "GitHub Actions"
-#          git add survey_data.rds
-#          git commit -m "Data updated" || echo "No changes to commit"
-#          git push origin || echo "No changes to commit"
 
 # Be careful with spacing in YAML files.
 # Each indentation should be done with two spaces (not tabs).
