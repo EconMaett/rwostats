@@ -103,11 +103,29 @@ survey_data |>
 # Fill in the survey to add some more data.
 
 # You can commit the file again on GitHub Desktop.
+# Or manually in R Studio.
 
 ## Jobs Lay Out the Steps to Run When the Action is Triggered -----
 
+# Change the GitHub-hosted runner from ubuntu-latest to
+# windows-latest, since this is the operating system you tested your code on.
+
+# Note that the imported data is saved on the virtual host and you need to
+# push it to your repository.
+
 
 ## Running Code on a Schedule with Cron Jobs ----
+
+# The GitHub Action is now run whenever we push the code to 
+# the GitHub main branch.
+
+# This is useful for testing, but we want the code to be run without
+# any manual input.
+
+# We change the trigger section to:
+# on:
+#   schedule:
+#     - cron: "0 12 * * *" // Run the code every day at 12:00 pm in UTC time zone.
 
 
 ## Using GitHub Actions to Keep a Report Always Up to Date -----
