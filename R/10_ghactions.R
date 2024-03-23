@@ -31,6 +31,12 @@ survey_data |>
 
 # Publish these files on GitHub.
 
+# On the GitHub repository, click on the "Actions" tab,
+# where you should see "on: push".
+
+# Note that you need to have a file "R/import-data.R"
+
+
 
 ## How GitHub Actions Work -----
 
