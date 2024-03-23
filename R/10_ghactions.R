@@ -125,11 +125,17 @@ survey_data |>
 # We change the trigger section to:
 # on:
 #   schedule:
-#     - cron: "0 12 * * *" // Run the code every day at 12:00 pm in UTC time zone.
+#     - cron: "0 15 * * *" // Run the code every day at 15:00 pm in UTC time zone.
 
 
 ## Using GitHub Actions to Keep a Report Always Up to Date -----
 
+# Create a Quarto document that imports the data and generates a report.
+# It makes use of the `{gt}` R package.
+# dir.create("Qmd")
+
+# The report is an HTML file that you can host as a static site
+# on GitHub Pages or Netlify.
 
 ## Conclusion -----
 

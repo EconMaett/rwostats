@@ -1,0 +1,26 @@
+---
+title: "Report"
+author: "EconMaett"
+format: html
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(googlesheets4)
+library(gt)
+```
+
+Report last updated `r format(now(), "%H:%M")`.
+
+```{r}
+gs4_deauth()
+
+survey_data <- read_sheet("https://docs.google.com/spreadsheets/d/13kfPtyQP1xmL4Rn6rfJHgJcAblfH7pxS5RvdmGe6BHg/edit?usp=sharing")
+
+survey_data |> 
+  gt()
+```
