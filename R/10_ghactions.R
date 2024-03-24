@@ -137,6 +137,6 @@ survey_data |>
 # The report is an HTML file that you can host as a static site
 # on GitHub Pages or Netlify.
 
-## Conclusion -----
+# END
 
 # END
